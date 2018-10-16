@@ -19,5 +19,22 @@ spring:
       routes:
       - id: base-service
         uri: lb://base-service
+        predicates:
+        - Path=/base/**
+        filters:
+        - RewritePath=/base/(?<path>.*), /$\{path}
       - id: storage-service
         uri: lb://storage-service
+        predicates:
+        - Path=/storage/**
+        filters:
+        - RewritePath=/storage/(?<path>.*), /$\{path}
+        
+zuul:
+  routes:
+    base:
+      path: /base/**
+      serviceId: base-service
+    storage:
+      path: /storage/**
+      serviceId: storage-service
