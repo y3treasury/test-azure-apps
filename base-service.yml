@@ -9,11 +9,3 @@ eureka:
 logging:
   pattern: 
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
-
-spring:
-  application:
-    name: base-service
-
-cloud:
-  config:
-    uri: http://localhost:8088
