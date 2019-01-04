@@ -6,31 +6,38 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8061/eureka/
               
-spring:
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-      - id: base-service
-        uri: lb://base-service
-        predicates:
-        - Path=/base/**
-        filters:
-        - RewritePath=/base/(?<path>.*), /$\{path}
-      - id: storage-service
-        uri: lb://storage-service
-        predicates:
-        - Path=/storage/**
-        filters:
-        - RewritePath=/storage/(?<path>.*), /$\{path}
+#spring:
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#      - id: base-service
+#        uri: lb://base-service
+#        predicates:
+#        - Path=/base/**
+#        filters:
+#        - RewritePath=/base/(?<path>.*), /$\{path}
+#      - id: storage-service
+#        uri: lb://storage-service
+#        predicates:
+#        - Path=/storage/**
+#        filters:
+#        - RewritePath=/storage/(?<path>.*), /$\{path}
         
 zuul:
+  sensitive-headers:
   routes:
     base:
       path: /base/**
       serviceId: base-service
-    storage:
-      path: /storage/**
-      serviceId: storage-service
+    dashboard:
+      path: /dashboard/**
+      serviceId: dashboard-service
+    treasury:
+      path: /treasury/**
+      serviceId: treasury-service
+    treasury-setup:
+      path: /treasury-setup/**
+      serviceId: treasury-setup-service
