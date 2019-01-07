@@ -27,7 +27,6 @@ eureka:
 #        - RewritePath=/storage/(?<path>.*), /$\{path}
         
 zuul:
-  sensitive-headers:
   routes:
     base:
       path: /base/**
