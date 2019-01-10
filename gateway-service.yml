@@ -36,7 +36,7 @@ zuul:
       path: /base/**
       serviceId: base-service
       stripPrefix: false
-      sensitiveHeaders: Cookie,Set-Cookie, AUTH_TOKEN, UNIQUE_LICENSE_KEY, email, password
+      sensitiveHeaders: Cookie,Set-Cookie
     dashboard:
       path: /dashboard/**
       serviceId: dashboard-service
