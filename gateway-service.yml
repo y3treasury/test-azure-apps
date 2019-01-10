@@ -32,7 +32,7 @@ logging:
         
 zuul:
   routes:
-    base:
+    base-service:
       path: /base/**
       serviceId: base-service
       stripPrefix: false
