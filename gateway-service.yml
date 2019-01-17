@@ -31,8 +31,11 @@ logging:
 #        - RewritePath=/storage/(?<path>.*), /$\{path}
         
 zuul:
+  ribbon:
+    eager-load:
+      enabled: true
   routes:
-    base:
+    base-service:
       path: /base/**
       serviceId: base-service
       stripPrefix: false
@@ -40,9 +43,15 @@ zuul:
     dashboard:
       path: /dashboard/**
       serviceId: dashboard-service
+      stripPrefix: false
+      sensitiveHeaders: Cookie,Set-Cookie
     treasury:
       path: /treasury/**
       serviceId: treasury-service
+      stripPrefix: false
+      sensitiveHeaders: Cookie,Set-Cookie
     treasury-setup:
       path: /treasury-setup/**
       serviceId: treasury-setup-service
+      stripPrefix: false
+      sensitiveHeaders: Cookie,Set-Cookie
