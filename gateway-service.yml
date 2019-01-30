@@ -35,7 +35,7 @@ zuul:
     eager-load:
       enabled: true
   routes:
-    base-service:
+    base:
       path: /base/**
       serviceId: base-service
       stripPrefix: false
@@ -50,7 +50,7 @@ zuul:
       serviceId: treasury-service
       stripPrefix: false
       sensitiveHeaders: Cookie,Set-Cookie
-    treasury-setup-service:
+    treasury-setup:
       path: /treasury-setup/**
       serviceId: treasury-setup-service
       stripPrefix: false
