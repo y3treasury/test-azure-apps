@@ -34,6 +34,7 @@ zuul:
   ribbon:
     eager-load:
       enabled: true
+      clients: base-service, dashboard-service, treasury-service, treasury-setup-service
   routes:
     base:
       path: /base/**
