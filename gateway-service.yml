@@ -31,7 +31,17 @@ logging:
 #        - RewritePath=/storage/(?<path>.*), /$\{path}
         
 zuul:
+  hystrix:
+    command:
+      default:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 10000
   ribbon:
+    ReadTimeout: 6000
+    connection-timeout: 3000
+    MaxAutoRetries: 3
     eager-load:
       enabled: true
       clients: base-service, dashboard-service, treasury-service, treasury-setup-service
