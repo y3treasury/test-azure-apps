@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: treasury56-discovery-service
   client:
     registerWithEureka: false
     fetchRegistry: false
