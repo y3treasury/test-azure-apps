@@ -4,7 +4,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://treasury-discovery.azurewebsites.net:8061/eureka/
+      defaultZone: https://treasury-discovery.azurewebsites.net
       
 logging:
   pattern: 
